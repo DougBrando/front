@@ -1,0 +1,139 @@
+#parceirosList h3 {
+    color: #2E7D32;
+    margin: 0;
+    padding-bottom: 5px;
+    text-transform: capitalize;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+#parceirosList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+section#parceirosList div {
+    border: 1px solid #00000041;
+    padding: 15px;
+    border-radius: 5px;
+    background: rgb(254 254 254);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+}
+
+[class^="car_"]:after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 20px;
+    display: block;
+    text-align: right;
+    margin-top: 0%;
+    content: "\f128";
+    float: right;
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.5);
+
+}
+
+.car_ECO {
+    background-color: #8cff0933 !important;
+}
+
+.car_PEV, .car_PEVs {
+    background-color: #f0b45b59 !important;
+}
+
+.car_COO {
+    background-color: #56c9ff31 !important;
+}
+
+.car_ECO:after {
+    content: "\f1b8";
+}
+
+
+.car_COO:after {
+    content: "\f0c0";
+}
+
+.car_PEV:after, .car_PEVs:after {
+    content: "\f3c5";
+}
+
+.car_undefined:AFTER {
+    content: "\f05a";
+}
+
+.bairro,
+#botaoPesquisar {
+    padding: 5px 10px;
+    border: 1px solid;
+    display: inline-block;
+    border-radius: 50px;
+    text-transform: capitalize;
+}
+
+#pesquisa,
+h2 {
+    padding: 5px;
+    display: inline-block;
+}
+
+#pesquisa {
+    background-color: none;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #000;
+    padding: 10px;
+
+
+}
+
+#botaoPesquisar {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.hero-section {
+    text-align: left !important;
+}
+
+section#parceirosList div p {
+    padding: 10px;
+}
+
+p.inclu {
+    font-family: monospace;
+    text-transform: uppercase;
+    font-size: small;
+}
+
+@media (max-width: 768px) {
+    #parceirosList {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #parceirosList {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+section h2 {
+    color: #2E7D32;
+}
+
+.objstyles p{
+    padding:5px;
+    background-color:rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin:5px
+
+}

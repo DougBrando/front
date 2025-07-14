@@ -1,0 +1,861 @@
+/* config. Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(176, 206, 194, 0.397);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* header*/
+header {
+    background: linear-gradient(135deg, #85ea66 0%, #4458c5 100%);
+    padding: 1rem 0;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    flex-wrap: wrap;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: auto;
+}
+
+#LogoLandingPage {
+    width: 4rem;
+    height: 4rem;
+}
+
+#Nome_do_nosso_site {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: white;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.bar {
+    background-color: rgb(245, 193, 97);
+    display: flex;
+    list-style: none;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.bar li {
+    flex-grow: 1;
+    border-right: 1px solid rgb(235, 177, 69);
+}
+
+.bar li:last-child {
+    border-right: none;
+}
+
+.bar li a {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.bar li a:hover {
+    background-color: rgb(235, 177, 69);
+    color: #333;
+}
+
+.bar li a.active {
+    background-color: rgb(165, 113, 16);
+    color: white;
+}
+
+/* Menu Hambúrguer (só na vers. mobile) */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* main */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    min-height: auto;
+}
+
+.hero-section {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.main-title {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    color: #2E7D32;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.main-subtitle {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem 0;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #4b4a4a;
+    line-height: 1.5;
+}
+
+.main-image-container {
+    margin: 2rem auto;
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards em container*/
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 2rem;
+}
+
+.content-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: auto;
+}
+
+.card-content h1 {
+    font-size: 2.2rem;
+    color: #2E7D32;
+    margin-bottom: 1rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    color: #2E7D32;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.benefits-list {
+    list-style: none;
+    margin: 1rem 0;
+    padding-left: 1rem;
+}
+
+.benefits-list li {
+    padding: 0.3rem 0;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+}
+
+.benefits-list li::before {
+    content: "🍃";
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.impact-topic, .acao-card {
+    margin-bottom: 2rem;
+}
+
+.impact-topic h2, .acao-card h3 {
+    font-size: 1.5rem;
+    color: #2E7D32;
+    margin-bottom: 0.8rem;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.acoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.acao-card {
+    background-color: #f8fcf8;
+    border: 1px solid #e0f2e0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.acao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.acao-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.acao-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #2E7D32;
+}
+
+.acao-card p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.dica-extra {
+    background: linear-gradient(to left, #4e944893, #69cc6985, #69cc6985, #4e944893);
+    width: 100%;
+    padding: 1.5rem;
+    padding-left: 2rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+}
+
+.dica-extra h3 {
+    font-size: 1.3rem;
+    color: #1a4f1a;
+    margin-bottom: 0.5rem;
+}
+
+.dica-extra p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Seção de divisão/estética */
+.section-divider {
+    background-color: #2e7d7275;
+    background-image: url('https://thumbs.dreamstime.com/b/ambiente-ecologia-sem-emenda-teste-padr%C3%A3o-fundo-ambiental-70888728.jpg');
+    background-blend-mode: color-burn;
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: calc(50% - 50vw);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    overflow: hidden;
+}
+
+.divisao-nav {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Seção do formulário */
+.form-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    width: 90%;
+    max-width: 700px;
+    margin: 4rem auto;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.form-header {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.form-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    font-size: 1.1rem;
+}
+
+.form-container {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    color: #2E7D32;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #E8F5E8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.contact-grid,
+.address-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.8rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.checkbox-item:hover {
+    background: #F8FFF8;
+    border-color: #4CAF50;
+}
+
+.checkbox-item input {
+    margin-right: 0.5rem;
+    width: auto;
+}
+
+.checkbox-item label {
+    margin: 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Rolagem do formulário */
+.form-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.form-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.form-section::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border-radius: 10px;
+}
+
+.form-section::-webkit-scrollbar-thumb:hover {
+    background: #3c8d3d;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #2e7d7275, #2e7d72);
+    width: 100%;
+    padding: 2rem 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas só no pc/desktop */
+    align-items: start;
+    gap: 2rem;
+    text-align: left;
+}
+
+.footer-section {
+    padding: 0.5rem;
+}
+
+.footer-nomes {
+    text-align: left;
+}
+
+.footer-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: white;
+    width: auto;
+}
+
+.team-members ul {
+    list-style: none; /* Remove aquelas bolinhas que ficam do lado dos tópicos de uma lista */
+    padding: 0;
+}
+
+.team-members li {
+    margin: 0.2rem 0;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.footer-ods {
+    text-align: center;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.ods-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.ods-link:hover {
+    color: #d1fae5;
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    height: auto;
+    max-width: 100px;
+    object-fit: contain;
+    transition: transform 0.3s;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(0%) hue-rotate(23deg) brightness(108%) contrast(100%);
+}
+
+.footer-logo:hover {
+    transform: scale(1.08);
+}
+
+.senai-logo {
+    max-width: 120px;
+}
+
+/*@media para outras telas
+
+/* Para telas menores/intermediárias(Laptops, Tablets no modo paisagem) */
+@media (max-width: 1024px) {
+    .header-content {
+        padding: 0 1rem;
+    }
+
+    .bar li a {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .main-title {
+        font-size: clamp(1.6rem, 4.5vw, 3rem);
+    }
+
+    .main-subtitle {
+        font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+        width: 95%;
+    }
+
+    .cards-container {
+        gap: 2rem;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+
+    .card-content h1 {
+        font-size: 2rem;
+    }
+
+    .card-content p {
+        font-size: 0.95rem;
+    }
+
+    .acao-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; 
+        text-align: center;
+    }
+
+    .footer-logos {
+        flex-direction: row; 
+        justify-content: center; 
+        grid-column: 1 / -1;
+    }
+
+    .footer-nomes,
+    .footer-ods {
+        text-align: center;
+    }
+
+    .ods-link {
+        white-space: normal;
+    }
+}
+
+
+/* Para telas menores que intermediárias (Tablets em retrato, Mobile maior) */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 1rem;
+    }
+
+    .header-logo {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    #LogoLandingPage {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    #Nome_do_nosso_site {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: flex-end;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .hamburger-menu {
+        display: block;
+        order: 2;
+    }
+
+    .bar {
+        flex-direction: column;
+        background-color: rgb(245, 193, 97);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        z-index: 1000;
+    }
+
+    .main-nav.active .bar {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .bar li {
+        border-right: none;
+        border-bottom: 1px solid rgb(235, 177, 69);
+    }
+
+    .bar li:last-child {
+        border-bottom: none;
+    }
+
+    .bar li a {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    /* Animação do hambúrguer/sanduíche, o nav ão fica logo aparente, tem que clicar no "hambúrguer" */
+    .hamburger-menu.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-menu.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    .main-title {
+        font-size: clamp(1.4rem, 6vw, 2.5rem);
+    }
+
+    .main-subtitle {
+        font-size: clamp(0.85rem, 3vw, 1.2rem);
+        width: 100%;
+    }
+
+    .content-section {
+        padding: 1.2rem;
+    }
+
+    .card-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .impact-topic h2, .acao-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .dica-extra {
+        padding: 1rem;
+        padding-left: 1.5rem;
+    }
+
+    .acoes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-divider {
+        height: 12vh;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .divisao-nav {
+        font-size: clamp(1.2rem, 5vw, 2.5rem);
+    }
+
+    .form-section {
+        width: 95%;
+        margin: 3rem auto;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .contact-grid,
+    .address-grid,
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-logos {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-logo {
+        max-width: 70px;
+    }
+
+    .senai-logo {
+        max-width: 90px;
+    }
+}
+
+/* Para telas muito pequenas (Mobile muito pequeno) */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .header-logo {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #LogoLandingPage {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    #Nome_do_nosso_site {
+        font-size: 1.5rem;
+    }
+
+    .bar li a {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .main-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .content-section {
+        padding: 1rem;
+    }
+
+    .card-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .impact-topic h2, .acao-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-header p {
+        font-size: 1rem;
+    }
+
+    .form-container {
+        padding: 1rem;
+    }
+
+    .checkbox-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem;
+    }
+
+    .checkbox-item input {
+        margin-bottom: 0.2rem;
+    }
+}
